@@ -1,4 +1,4 @@
-def Square(x):
+def square(x):
     """
         Input is a number
         Output is the square of the input number
@@ -6,4 +6,4 @@ def Square(x):
     return x*x
 
 n=int(input("Enter the number whose square is to be calculated: "))
-print(Square(n))
+print(square(n))
