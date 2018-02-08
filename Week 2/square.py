@@ -5,5 +5,9 @@ def square(x):
     """
     return x*x
 
-n=int(input("Enter the number whose square is to be calculated: "))
+s=input("Enter the number whose square is to be calculated: ")
+if '.' in s:
+    n=float(s)
+else:
+    n=int(s)
 print(square(n))

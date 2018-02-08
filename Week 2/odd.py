@@ -1,7 +1,5 @@
 def odd(number):
     return bool(number%2)
 
-if(odd(int(input("Enter number to be checked: ")))):
-    print("The number is odd.")
-else:
-    print("The number is even.")
+number=int(input("Enter the number to be checked: "))
+print("The number is odd"*int(odd(number))+"The number is even"*int(odd(number+1)))
