@@ -125,13 +125,26 @@ def playGame(wordList):
     wordList: list (string)
     """
     while(True):
-        response=input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
-        if response is 'n':
-            hand=dealHand(HAND_SIZE)
-            compPlayHand(hand, wordList,HAND_SIZE)
-        elif response is 'r':
-            playHand(hand,wordList,HAND_SIZE)
-        elif response is 'e':
+        response1=input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+        response2=input("Enter 'u' if the user is the player and 'c' if the computer is the player: ")
+        if response1 is 'n':
+            if response2 is 'u':
+                hand=dealHand(HAND_SIZE)
+                playHand(hand,wordList,HAND_SIZE)
+            if response2 is 'c':
+                hand=dealHand(HAND_SIZE)
+                compPlayHand(hand,wordList,HAND_SIZE)
+        elif response1 is 'r':
+            try:
+                if response2 is 'u':
+                    playHand(hand,wordList,HAND_SIZE)
+                if response2 is 'c':
+                    compPlayHand(hand,wordList,HAND_SIZE)
+            except NameError:
+                print("No games were played before this. Starting a new game.")
+                hand=dealHand(HAND_SIZE)
+                playHand(hand,wordList,HAND_SIZE)
+        elif response1 is 'e':
             break
         else:
             print("Invalid Response. Please try again\n")

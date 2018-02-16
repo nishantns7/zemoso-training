@@ -4,4 +4,4 @@
 def fourthPower(number):
     return square(square(number))
 
-print(fourthPower(int(input("Enter a number: "))))
+print(fourthPower(float(input("Enter a number: "))))
