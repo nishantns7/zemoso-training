@@ -6,6 +6,10 @@ def recurPower(base,exp):
     else:
         return base*recurPower(base,exp-1)
 
-base=int(input("Enter the base: "))
+s=input("Enter the base: ")
+if '.' in s:
+    base=float(s)
+else:
+    base=int(s)
 exp=int(input("Enter the exponent: "))
 print(recurPower(base,exp))

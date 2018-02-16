@@ -1,6 +1,6 @@
 import math
 firstBalance=float(input("Enter the initial balance: "))
-annualInterestRate=float(input("Enter the annual interest rate: "))
+annualInterestRate=float(input("Enter the annual interest rate as a decimal: "))
 
 def debtPayFull(firstBalance,annualInterestRate):
     payment=math.floor(firstBalance/12/10)*10

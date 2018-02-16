@@ -124,9 +124,17 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this when you code this function
-
+    while(True):
+        response=input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+        if response is 'n':
+            hand=dealHand(HAND_SIZE)
+            compPlayHand(hand, wordList,HAND_SIZE)
+        elif response is 'r':
+            playHand(hand,wordList,HAND_SIZE)
+        elif response is 'e':
+            break
+        else:
+            print("Invalid Response. Please try again\n")
         
 #
 # Build data structures used for entire session and play game

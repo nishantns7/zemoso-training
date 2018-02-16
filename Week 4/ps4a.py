@@ -296,7 +296,12 @@ def playGame(wordList):
             hand=dealHand(HAND_SIZE)
             playHand(hand,wordList,HAND_SIZE)
         elif response is 'r':
-            playHand(hand,wordList,HAND_SIZE)
+            try:
+                playHand(hand,wordList,HAND_SIZE)
+            except NameError:
+                print("No games were played before this. Starting a new game.")
+                hand=dealHand(HAND_SIZE)
+                playHand(hand,wordList,HAND_SIZE)
         elif response is 'e':
             break
         else:

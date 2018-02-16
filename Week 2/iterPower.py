@@ -3,6 +3,10 @@ def iterPower(base,exp):
     for i in range(exp):
         power=power*base
     return power
-base=int(input("Enter the base: "))
+s=input("Enter the base: ")
+if '.' in s:
+    base=float(s)
+else:
+    base=int(s)
 exp=int(input("Enter the exponent: "))
 print(iterPower(base,exp))

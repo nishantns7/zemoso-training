@@ -1,5 +1,5 @@
 firstBalance=float(input("Enter the initial balance: "))
-annualInterestRate=float(input("Enter the annual interest rate: "))
+annualInterestRate=float(input("Enter the annual interest rate as a decimal: "))
 
 def debtPayFullBisect(firstBalance,annualInterestRate):
     payLower=firstBalance/12

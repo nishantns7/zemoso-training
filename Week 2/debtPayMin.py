@@ -1,6 +1,6 @@
 balance=float(input("Enter the initial balance: "))
-annualInterestRate=float(input("Enter the annual interest rate: "))
-monthlyPaymentRate=float(input("Enter the minimum monthly payment rate: "))
+annualInterestRate=float(input("Enter the annual interest rate as a decimal: "))
+monthlyPaymentRate=float(input("Enter the minimum monthly payment rate as a decimal: "))
 
 def debtPayMin(balance,annualInterestRate,monthlyPaymentRate):
     for i in range(0,12):
