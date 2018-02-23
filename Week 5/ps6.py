@@ -136,6 +136,8 @@ class Message(object):
         for letter in self.message_text:
             if letter in shiftDict.keys():
                 newString+=shiftDict[letter]
+            else:
+                newString+=letter
         return newString
 
 class PlaintextMessage(Message):
@@ -245,7 +247,8 @@ class CiphertextMessage(Message):
             if counter>maxWords:
                 maxWords=counter
                 bestShift=shift
-        return (bestShift,decrypted_text)
+                bestDecryption=decrypted_text
+        return (bestShift,bestDecryption)
 
 #Example test case (PlaintextMessage)
 plaintext = PlaintextMessage('hello', 2)
