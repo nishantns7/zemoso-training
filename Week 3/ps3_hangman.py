@@ -119,14 +119,17 @@ def hangman(secretWord):
         print("You have "+str(8-turn)+" guesses left.")
         print("Available letters: "+getAvailableLetters(lettersGuessed))
         guess=input("Please guess a letter: ")
-        if(guess in lettersGuessed):
+        if(guess is ""):
+            print("You must guess a letter.")
+            continue
+        if(guess[0] in lettersGuessed):
             print("Oops! You've already guessed that letter: "+getGuessedWord(secretWord,lettersGuessed))
-        elif(guess in secretWord):
-            print("Good guess: "+getGuessedWord(secretWord,lettersGuessed+[guess]))
+        elif(guess[0] in secretWord):
+            print("Good guess: "+getGuessedWord(secretWord,lettersGuessed+[guess[0]]))
         else:
             print("Oops! That letter is not in my word: "+getGuessedWord(secretWord,lettersGuessed))
             turn+=1
-        lettersGuessed+=guess
+        lettersGuessed+=guess[0]
     if(turn==8):
         print("Sorry, you ran out of guesses. The word was "+secretWord+".")
 
